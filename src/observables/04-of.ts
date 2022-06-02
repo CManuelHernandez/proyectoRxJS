@@ -10,16 +10,22 @@ const obs$ = of<number[]>(...[1, 2, 3, 4, 5, 6], 7, 8);
   Promise.resolve(true)
 ); */
 
-/* obs$.subscribe({
-  next: (value) => { console.log('next', value) },
-  error: () => { null },
-  complete: () => console.log('terminamos la secuencia')
-}); */
-
 console.log("Inicio del Obs$");
+obs$.subscribe({
+  next: (value) => {
+    console.log("next", value);
+  },
+  error: () => {
+    null;
+  },
+  complete: () => console.log("terminamos la secuencia"),
+});
+console.log("Fin del Obs$");
+
+/* console.log("Inicio del Obs$");
 obs$.subscribe(
   (next) => console.log("next", next),
   null,
   () => console.log("Terminamos la secuencia")
 );
-console.log("Fin del Obs$");
+console.log("Fin del Obs$"); */
